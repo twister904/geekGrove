@@ -1,0 +1,21 @@
+<%- include('partials/header.ejs'); %>
+
+<!-- Tag Videos -->
+<section class="tag-videos section">
+    <div class="container">
+        <h2 class="title section-title" data-name="Tag Videos" style="padding: 20px;">Tag Videos</h2>
+        <div class="tag-videos-container d-grid">
+            <% for (let i = 0; i < tagVideos.length; i++) { %>
+                <div class="tag-video-article">
+                    <iframe src="<%= tagVideos[i].embedSrc %>" frameborder="0" allowfullscreen></iframe>
+                    <div class="tag-video-details">
+                        <h3 class="video-title"><%= tagVideos[i].title %></h3>
+                        <p class="video-description"><%= tagVideos[i].description %></p>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer.ejs'); %>

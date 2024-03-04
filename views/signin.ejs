@@ -1,0 +1,23 @@
+<%- include('partials/header.ejs'); %>
+
+<section class="signin section-header-offset">
+    <div class="container">
+        <h2 class="title section-title" data-name="Sign In">Sign In</h2>
+
+        <% if (locals.error) { %>
+            <p class="error-message"><%= error %></p>
+        <% } %>
+
+        <form action="/signin" method="post" class="auth-container">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
+</section>
+
+<%- include('partials/footer.ejs'); %>

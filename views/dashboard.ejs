@@ -1,0 +1,42 @@
+<%- include('partials/header.ejs'); %>
+
+<section class="dashboard section section-header-offset">
+    <div class="container">
+        <!-- Profile details -->
+        <div class="profile-details">
+            <img src="<%= user.profilePicture %>" alt="Profile Picture" class="profile-picture">
+            <h2 class="profile-name"><%= user.firstName %> <%= user.lastName %></h2>
+            <p class="profile-email"><%= user.email %></p>
+        </div>
+
+        <!-- Preferences -->
+        <div class="preferences">
+            <h3 class=" section-title">Preferences</h3>
+<ul>
+    <li>Preferred Topics:</li>
+    <ul>
+        <% user.preferredTopics.forEach(function(topic) { %>
+            <li><%= topic %></li>
+        <% }); %>
+    </ul>
+    <li>Preferred Courses:</li>
+    <ul>
+        <% user.preferredCourses.forEach(function(course) { %>
+            <li><%= course %></li>
+        <% }); %>
+    </ul>
+    <li>Preferred Channels:</li>
+    <ul>
+        <% user.preferredChannels.forEach(function(channel) { %>
+            <li><%= channel %></li>
+        <% }); %>
+    </ul>
+</ul>
+        </div>
+
+        <!-- Other dashboard content goes here -->
+
+    </div>
+</section>
+
+<%- include('partials/footer.ejs'); %>

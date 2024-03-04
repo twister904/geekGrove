@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs'); %>
+
+<section class="older-posts section">
+    <div class="container">
+        <h2 class="title section-title" data-name="Youtube Channels" style="padding: 50px;">Youtube Channels</h2>
+        <div class="older-posts-grid-wrapper d-grid">
+            <% for(let i=0;i<channels.length;i++){ %>
+                <a href="<%= channels[i].url %>" target="_blank" class="article d-grid">
+                    <div class="older-posts-article-image-wrapper">
+                        <img src=" <%= channels[i].image %>" alt="" class="article-image">
+                    </div>
+                    <div class="article-data-container">
+                        <div class="article-data">
+                            <span><%= channels[i].date %></span>
+                            <span class="article-data-spacer"></span>
+                            <span><%= channels[i].readTime %></span>
+                        </div>
+                        <h3 class="title article-title"> <%= channels[i].name %></h3>
+                        <p class="article-description">
+                            <%= channels[i].description %>
+                        </p>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer.ejs'); %>

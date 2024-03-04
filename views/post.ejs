@@ -1,0 +1,54 @@
+<%- include('partials/header.ejs'); %>
+    <!-- Blog post -->
+    <section class="blog-post section-header-offset">
+        <div class="blog-post-container container">
+            <div class="blog-post-data">
+                <h3 class="title blog-post-title"><%= post.title %></h3>
+                <div class="article-data">
+                    <span>Dec 6th 2023</span>
+                    <span class="article-data-spacer"></span>
+                    <span>4 minn read</span>
+                </div>
+                <iframe width="560" height="315" src="<%= post.url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="container">
+                <p><!--Embark on a transformative journey with Love Babbar's DSA Full Placement Series. This comprehensive guide is a treasure trove for anyone aspiring to excel in technical interviews. Babbar's lucid explanations and real-world problem-solving approach demystify complex concepts, empowering learners to navigate coding challenges with confidence. As Love Babbar wisely puts it
+                Elevate your coding skills, unravel the secrets of data structures and algorithms, and pave your way to success in interviews.--> <%= post.about1  %></p>
+                <blockquote class="quote">
+                    <p>
+                        <span><i class="ri-double-quotes-l"></i></span>
+                        <!--In the world of coding, every challenge is an opportunity to learn--> <%= post.quote  %>
+                        <span><i class="ri-double-quotes-r"></i></span>
+                    </p>
+                </blockquote>
+                <p> <!--This series is not just a tutorial; it's a roadmap to unlocking your full coding potential and conquering the challenges of tech recruitment--> <%= post.about2 %> </p>
+
+                <div class="author d-grid">
+                    <div class="author-image-box">
+                        <img src="<%= post.author.img %>" alt="" class="article-image">
+                    </div>
+                    <div class="author-about">
+                        <h3 class="author-name">
+                            <%= post.author.name %>
+                        </h3>
+                        <p><%= post.author.about %></p>
+                        <ul class="list social-media">
+                            <li class="list-item">
+                                <a href="https://github.com/twister904" target="_blank" class="list-link">
+                                    <i class="ri-github-line"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/saifimazhar8/" target="_blank" class="list-link">
+                                    <i class="ri-linkedin-line"></i>
+                                </a>
+                                <a href="mailto:saifimazhar8@gmail.com" target="_blank" class="list-link">
+                                    <i class="ri-mail-line"></i>
+                                </a>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<%- include('partials/footer.ejs') %>

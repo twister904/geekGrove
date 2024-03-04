@@ -1,0 +1,24 @@
+<%- include('partials/header.ejs'); %>
+
+<!-- Latest Videos -->
+<section class="latest-videos section section-header-offset">
+    <div class="container">
+        <h2 class="title section-title" data-name="Latest Videos">Latest Videos</h2>
+        
+        <% for (const video of videoList) { %>
+        <div class="video-container ">
+            <!-- Embedded Video -->
+            <iframe src="<%= video.embedSrc %>" frameborder="0" allowfullscreen></iframe>
+
+            <!-- Video Title and Description -->
+            <div class="video-details ">
+                <h3 class="video-title"><%= video.title %></h3>
+                <p class="video-description"><%= video.description %></p>
+            </div>
+        </div>
+        <% } %>
+
+    </div>
+</section>
+
+<%- include('partials/footer.ejs'); %>

@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeekGrove</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- Favicon -->
+    <link rel="icon" href="assests\images\favicon_io\favicon-32x32.png">
+    <!-- Remix icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Swiper.js styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <a href="/">
+                <h2 class="logo">GeekGrove</h2>
+            </a>
+            <div class="menu" id="menu">
+                <ul class="list">
+                    <li class="list-item">
+                        <a href="/" class="list-link current">Home</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#categories" class="list-link">Categories</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="/dashboard" class="list-link">Dashboard</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#contact" class="list-link">Contact</a>
+                    </li>
+                    <% if (locals.user) { %>
+                        <li class="list-item screen-lg-hidden">
+                            <span class="list-link"> <%= user.firstName %> </span>
+                        </li>
+                    <% } else { %>
+                        <li class="list-item screen-lg-hidden">
+                            <a href="/signin" class="list-link">Sign in</a>
+                        </li>
+                    <% } %>    
+                    <li class="list-item screen-lg-hidden">
+                        <a href="/signup" class="list-link">Sign up</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="list list-right">
+                <button class="btn place-items-center" id="theme-toggle-btn">
+                    <i class="ri-sun-line sun-icon"></i>
+                    <i class="ri-moon-line moon-icon"></i>
+                </button>
+                <button class="btn place-items-center" id="search-icon">
+                    <i class="ri-search-line"></i>
+                </button>
+                <button class="btn place-items-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-icon">
+                    <i class="ri-menu-3-line open-menu-icon"></i>
+                    <i class="ri-close-line close-menu-icon"></i>
+                </button>
+                <% if (locals.user) { %>
+                    <a href="/signin" class="list-link screen-sm-hidden"><%= user.firstName %></a>
+                    <% } else { %>
+                <a href="/signin" class="list-link screen-sm-hidden">Sign in</a>
+                <% } %> 
+                <a href="/signup" class="btn sign-up-btn fancy-border screen-sm-hidden">
+                    <span>Sign up</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!-- Search -->
+    <div class="search-form-container container" id="search-form-container">
+        <div class="form-container-inner">
+            <form action="/searchpost" class="form">
+                <input type="text" name="search" class="form-input" placeholder="What are you looking for?">
+                <button class="btn form-btn" type="submit">
+                    <i class="ri-search-line"></i>
+                </button>
+            </form>
+            <span class="form-note">Or press ESC to close.</span>
+            </div>
+            <button class="btn form-close-btn place-items-center" id="form-close-btn">
+                <i class="ri-close-line"></i>
+            </button>
+    </div>
